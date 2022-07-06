@@ -13,6 +13,8 @@ function App() {
      <LeftMenu />
      <Main />
      <RightMenu />
+    
+     
     </div>
   );
 }
