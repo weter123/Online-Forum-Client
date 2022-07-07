@@ -1,29 +1,30 @@
-//import {createSlice} from '@reduxjs/toolkit'
-
-//export const userSlice = createSlice({
-    //name: 'counter',
-    //initialState
-//})
+import {createSlice} from '@reduxjs/toolkit'
 
 export const UserProfileSetType = "USER_PROFILE_SET";
 
-export interface UserProfilePayload {
+export interface UserProfileState{
     id: string;
     username: string;
 }
 
-export interface UserProfileAction{
-    type:string;
-    payload: UserProfilePayload | null;
-}
 
-export const UserProfileReducer = (state: any = null,action: UserProfileAction): UserProfilePayload | null =>{
-    switch(action.type){
-        case UserProfileSetType:
-            return action.payload;
-        default:
-            return state;
-    }
+const initialState: UserProfileState = {
+    id: '',
+    username: ''
 };
 
-//export default UserProfileReducer;
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers:{
+        userProfile: (state, action) => {
+            state.id = action.payload.id
+            state.username =action.payload.username
+        }
+    }
+})
+
+
+export const {userProfile} = userSlice.actions;
+
+export default userSlice.reducer;
