@@ -1,4 +1,4 @@
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faRegistered } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/useHooks'
@@ -15,10 +15,18 @@ const SideBarMenus = () => {
     return(
         <React.Fragment>
             <ul>
-                <FontAwesomeIcon icon= {faUser} />
-                <span className='menu-name'>
-                    {user?.username}
-                </span>
+                <li>
+                    <FontAwesomeIcon icon= {faUser} />
+                    <span className='menu-name'>
+                        {user?.username}
+                    </span>
+                </li>
+                <li>
+                <FontAwesomeIcon icon= {faRegistered} />
+                    <span className='menu-name'>
+                        register
+                    </span>
+                </li>
             </ul>
         </React.Fragment>
     );
