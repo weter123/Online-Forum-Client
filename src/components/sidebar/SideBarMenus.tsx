@@ -1,9 +1,11 @@
 import { faUser, faRegistered } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/useHooks'
 import { userProfile } from '../../store/user/Reducers';
+import Registration from "../auth/Registeration"
 const SideBarMenus = () => {
+    const [showRegister, setShowRegister] = useState(true);
     const user = useAppSelector(state =>state.user);
     const dispatch =useAppDispatch();
 
@@ -12,6 +14,10 @@ const SideBarMenus = () => {
         ));
     },[dispatch]);
 
+    const onClickToggleRegister = () => {
+        setShowRegister(!showRegister);
+      };
+    
     return(
         <React.Fragment>
             <ul>
@@ -23,8 +29,10 @@ const SideBarMenus = () => {
                 </li>
                 <li>
                 <FontAwesomeIcon icon= {faRegistered} />
-                    <span className='menu-name'>
+                    <span onClick={onClickToggleRegister} className='menu-name'>
                         register
+                        <Registration isOpen={showRegister}
+                        onClickToggle={onClickToggleRegister} />
                     </span>
                 </li>
             </ul>
