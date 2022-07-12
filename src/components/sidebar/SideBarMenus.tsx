@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/useHooks'
 import { userProfile } from '../../store/user/Reducers';
 import Registration from "../auth/Registeration"
 import Login from '../auth/Login';
+import Logout from '../auth/Logout';
 const SideBarMenus = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin,setShowLogin] = useState(false);
@@ -26,7 +27,7 @@ const SideBarMenus = () => {
     };
 
     const onClickToggleLogout = () => {
-        setShowLogin(!showRegister);
+        setShowLogout(!showRegister);
     };
     return(
         <React.Fragment>
@@ -58,7 +59,7 @@ const SideBarMenus = () => {
                     <span onClick={onClickToggleLogout} className="menu-name">
                         logout
                     </span>
-                     <Login isOpen={showLogin} onClickToggle={onClickToggleLogout} />
+                     <Logout isOpen={showLogout} onClickToggle={onClickToggleLogout} />
                  </li>
             </ul>
         </React.Fragment>
