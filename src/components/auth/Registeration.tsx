@@ -1,11 +1,11 @@
 import React, { FC, useReducer, useState} from "react";
 import ReactModal from "react-modal";
 import { isPasswordValid, PasswordTestResult } from "../../common/validators/PasswordValidator";
-import {RegistrationProps} from '../types/ModalProps';
+import {ModalProps} from '../types/ModalProps';
 import userReducer from "./common/UserReducer";
 import { allowSubmit } from "./common/Helpers";
 
-    const Registration : FC<RegistrationProps> = ({ isOpen, onClickToggle}) =>{
+    const Registration : FC<ModalProps> = ({ isOpen, onClickToggle}) =>{
         const [isRegisterDisabled, setRegisterDisabled,] = useState(true);
         const[{ userName,password,email, passwordConfirm,resultMsg}, dispatch] = useReducer(userReducer,{
             userName: "devac",
@@ -99,7 +99,7 @@ import { allowSubmit } from "./common/Helpers";
                                 onClick ={onClickRegister}>Register</button>
                                 <button
                                 style={{marginLeft: ".5em"}}
-                                className="cansel-btn"
+                                className="cancel-btn"
                                 onClick ={onClickCancel}>Close</button>
                             </div>
                             <span className="reg-btn-right">
