@@ -1,6 +1,7 @@
 import React, { FC, useReducer, useState} from "react";
 import ReactModal from "react-modal";
 import { isPasswordValid, PasswordTestResult } from "../../common/validators/PasswordValidator";
+import {RegistrationProps} from '../types/ModalProps';
 
 const userReducer = (state: any, action: any) => {
     switch(action.type){
@@ -39,12 +40,6 @@ const userReducer = (state: any, action: any) => {
          }
     }
 
-    export interface RegistrationProps {
-        isOpen: boolean;
-        onClickToggle: (
-            e: React.MouseEvent<Element, MouseEvent>  | React.KeyboardEvent<Element>
-        ) => void;
-    }
 
     const Registration : FC<RegistrationProps> = ({ isOpen, onClickToggle}) =>{
         const [isRegisterDisabled, setRegisterDisabled,] = useState(true);
