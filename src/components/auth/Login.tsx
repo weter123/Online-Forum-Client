@@ -54,8 +54,7 @@ const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
       };
     
       const onClickCancel = (
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-      ) => {
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         onClickToggle(e);
       };
     
