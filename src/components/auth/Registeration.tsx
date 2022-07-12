@@ -2,44 +2,8 @@ import React, { FC, useReducer, useState} from "react";
 import ReactModal from "react-modal";
 import { isPasswordValid, PasswordTestResult } from "../../common/validators/PasswordValidator";
 import {RegistrationProps} from '../types/ModalProps';
-
-const userReducer = (state: any, action: any) => {
-    switch(action.type){
-        case "userName" :
-            return {
-                ...state,
-                userName: action.payload
-            };
-            
-        case "password":
-            return {
-                ...state,
-                password: action.payload
-            };
-        case "passwordConfirm":
-            return {
-                ...state,
-                PasswordConfirm: action.payload
-            };
-        case "email" :
-            return {
-                ...state,
-                email: action.payload
-            };
-        case "resultMsg":
-            return {
-                ...state,
-                resultMsg: action.payload
-            };
-        
-            default:
-                return {
-                    ...state,
-                    resultMsg: 'A Failure has occurred.'
-                };
-         }
-    }
-
+import userReducer from "./common/UserReducer";
+import { allowSubmit } from "./common/Helpers";
 
     const Registration : FC<RegistrationProps> = ({ isOpen, onClickToggle}) =>{
         const [isRegisterDisabled, setRegisterDisabled,] = useState(true);
@@ -51,34 +15,31 @@ const userReducer = (state: any, action: any) => {
              resultMsg: "",
         });
 
-        const allowRegister = (msg: string, setDisabled: boolean) =>{
-            setRegisterDisabled(setDisabled);
-            dispatch({type: "resultMsg", payload: msg});
-        };
+       
 
         const onChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
             dispatch({type: "userName", payload: e.target.value});
             if(!e.target.value){
-                allowRegister("userName Cannot be empty", true);
+                allowSubmit(dispatch,"userName Cannot be empty",true);
             }
             else{
-                allowRegister("", false);
+                allowSubmit(dispatch,"",false);
             }
         };
         const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) =>{
             dispatch({type: "email", payload: e.target.value});
             if(!e.target.value){
-                allowRegister("email Cannot be empty", true);
+                allowSubmit(dispatch,"email Cannot be empty", true);
             }
             else{
-                allowRegister("", false);
+                allowSubmit(dispatch,"", false);
             }
         };
         const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) =>{
             dispatch({type: "Password", payload: e.target.value});
             const PasswordCheck: PasswordTestResult = isPasswordValid(e.target.value);
             if(!PasswordCheck.isValid){
-                allowRegister(PasswordCheck.message, true);
+                allowSubmit(dispatch,PasswordCheck.message, true);
                 return;
             }
             passwordsSame(passwordConfirm,e.target.value);
@@ -89,10 +50,10 @@ const userReducer = (state: any, action: any) => {
         };
         const passwordsSame = (passwordVal: string, passwordConfirmVal: string) =>{
             if(passwordVal !== passwordConfirmVal){
-                allowRegister("Passwords do not match", true);
+                allowSubmit(dispatch,"Passwords do not match", true);
                 return false;
             }else{
-                allowRegister("", false);
+                allowSubmit(dispatch,"", false);
                 return true;
             }
         };
