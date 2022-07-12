@@ -1,11 +1,11 @@
 import { faUser, faRegistered, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/useHooks'
-import { userProfile } from '../../store/user/Reducers';
-import Registration from "../auth/Registeration"
-import Login from '../auth/Login';
-import Logout from '../auth/Logout';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useHooks'
+import { userProfile } from '../../../store/user/Reducers';
+import Registration from "../../auth/Registeration"
+import Login from '../../auth/Login';
+import Logout from '../../auth/Logout';
 const SideBarMenus = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin,setShowLogin] = useState(false);

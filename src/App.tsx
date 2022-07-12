@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Main'
-import SideBar from './components/sidebar/SideBar';
-import Nav from './components/Nav';
-import RightMenu from './components/RightMenu';
-import LeftMenu from './components/LeftMenu';
+import Main from './components/areas/Main'
+import SideBar from './components/areas/sidebar/SideBar';
+import Nav from './components/areas/Nav';
+import RightMenu from './components/areas/RightMenu';
+import LeftMenu from './components/areas/LeftMenu';
 function App() {
   return (
     <div className="App">

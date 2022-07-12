@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from "react";
-import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import Category from "../models/Category"
-import { getCategories } from "../services/DataServices";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import Category from "../../models/Category"
+import { getCategories } from "../../services/DataServices";
 const LeftMenu = () => {
     const {width} = useWindowDimensions();
     const [categories, setCategories] = useState<JSX.Element>(
