@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Main from './components/areas/Main'
+import Main from './components/areas/main/Main'
 import SideBar from './components/areas/sidebar/SideBar';
 import Nav from './components/areas/Nav';
 import RightMenu from './components/areas/RightMenu';
