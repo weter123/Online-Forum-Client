@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import ReactModal from "react-modal";
 import SideBarMenus from "./sidebar/SideBarMenus";
-
+import "./Nav.css";
 const Nav = () => {
     const[showMenu, setShowMenu] = useState(false);
     const {width} = useWindowDimensions();
