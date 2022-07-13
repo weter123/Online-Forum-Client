@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
-import Main from './components/areas/main/Main'
-import SideBar from './components/areas/sidebar/SideBar';
-import Nav from './components/areas/Nav';
-import RightMenu from './components/areas/RightMenu';
-import LeftMenu from './components/areas/LeftMenu';
+import Home from "./components/routes/Home";
+import { Route, Routes} from 'react-router-dom';
+
+
 function App() {
+  
   return (
-    <div className="App">
-     <Nav />
-     <SideBar />
-     <LeftMenu />
-     <Main />
-     <RightMenu />
-    
-     
-    </div>
+
+    <Routes>
+      <Route  path="/" element = {<Home  />} />
+      <Route path="/categorythreads/:categoryId" element = {<Home  />} />
+    </Routes>
+
+   
+   
   );
 }
+
 
 export default App;
