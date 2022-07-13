@@ -1,3 +1,12 @@
+#Updates
+some of the dependancies provided for the project are out of date. as such, I took measures to implement the newest versions when possible.
+  - utilized redux-toolkit
+    -- used confiugreStore instead of createStore
+    -- used createSlice when creating reducer functions
+  - Migrate from React Router v5 to React Router v6
+    -- used routes instead Switch
+    -- removed exact and render and replaced them with element.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
