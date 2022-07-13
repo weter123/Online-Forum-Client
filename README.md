@@ -4,8 +4,8 @@ some of the dependancies provided for the project are out of date. as such, I to
     - used confiugreStore instead of createStore
     - used createSlice when creating reducer functions
   - Migrated from React Router v5 to React Router v6
-    - used Routes instead Switch
-    - removed exact and render and replaced them with element.
+    - used Routes instead Switch (testing)
+    - removed exact and render and replaced them with element. (testing)
     - used useNavigate instead of useHistory (testing)
 
 # Getting Started with Create React App
