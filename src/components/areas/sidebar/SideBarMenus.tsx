@@ -6,7 +6,7 @@ import { userProfile } from '../../../store/user/Reducers';
 import Registration from "../../auth/Registeration"
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
-import "./SideBarMenus.css";
+import "./SideBarMenu.css";
 const SideBarMenus = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin,setShowLogin] = useState(false);
