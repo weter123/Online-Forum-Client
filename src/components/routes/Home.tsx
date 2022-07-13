@@ -4,7 +4,7 @@ import SideBar from '../areas/sidebar/SideBar';
 import Nav from '../areas/Nav';
 import RightMenu from '../areas/RightMenu';
 import LeftMenu from '../areas/LeftMenu';
-
+import "./Home.css"
 const Home:FC =() =>  {
     return(
         <div className="screen-root-container home-container">
@@ -16,7 +16,7 @@ const Home:FC =() =>  {
             <Main />
             <RightMenu />
         </div>
-    )
-}
+    );
+};
 
 export default Home;
