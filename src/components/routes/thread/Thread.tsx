@@ -5,6 +5,7 @@ import { getThreadById } from "../../../services/DataServices";
 import Nav from "../../areas/Nav";
 import ThreadHeader from "./ThreadHeader";
 import ThreadCategory from "./ThreadCategory";
+import ThreadTitle from "./ThreadTitle";
 const Thread= () => {
     const [thread,setThread] = useState<ThreadModal | undefined>();
     const{id} = useParams();
@@ -35,6 +36,7 @@ const Thread= () => {
                         title={thread?.title}
                     />
                      <ThreadCategory categoryName={thread?.category?.name} />
+                     <ThreadTitle title={thread?.title} />
                 </div>
             </div>
         </div>
