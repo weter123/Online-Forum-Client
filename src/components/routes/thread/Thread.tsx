@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./Thread.css"
 import ThreadModal from "../../../models/Thread";
 import { getThreadById } from "../../../services/DataServices";
 import Nav from "../../areas/Nav";
