@@ -8,6 +8,7 @@ some of the dependancies provided for the project are out of date. as such, I to
     - removed exact and render and replaced them with element. (testing)
     - used useNavigate instead of useHistory (testing)
 
+due to isuue with installation, I am using react-select instead of react-dropdown (testing)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
