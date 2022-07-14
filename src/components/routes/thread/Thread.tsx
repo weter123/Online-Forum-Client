@@ -4,7 +4,7 @@ import ThreadModal from "../../../models/Thread";
 import { getThreadById } from "../../../services/DataServices";
 import Nav from "../../areas/Nav";
 import ThreadHeader from "./ThreadHeader";
-
+import ThreadCategory from "./ThreadCategory";
 const Thread= () => {
     const [thread,setThread] = useState<ThreadModal | undefined>();
     const{id} = useParams();
@@ -34,6 +34,7 @@ const Thread= () => {
                         lastModifiedOn={thread ? thread.lastModifiedOn : new Date()}
                         title={thread?.title}
                     />
+                     <ThreadCategory categoryName={thread?.category?.name} />
                 </div>
             </div>
         </div>
