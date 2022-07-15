@@ -7,6 +7,8 @@ import Nav from "../../areas/Nav";
 import ThreadHeader from "./ThreadHeader";
 import ThreadCategory from "./ThreadCategory";
 import ThreadTitle from "./ThreadTitle";
+import ThreadBody from "./ThreadBody";
+
 const Thread= () => {
     const [thread,setThread] = useState<ThreadModal | undefined>();
     const{id} = useParams();
@@ -38,6 +40,7 @@ const Thread= () => {
                     />
                      <ThreadCategory categoryName={thread?.category?.name} />
                      <ThreadTitle title={thread?.title} />
+                     <ThreadBody body={thread?.body} />
                 </div>
             </div>
         </div>
