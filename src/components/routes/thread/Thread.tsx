@@ -8,6 +8,8 @@ import ThreadHeader from "./ThreadHeader";
 import ThreadCategory from "./ThreadCategory";
 import ThreadTitle from "./ThreadTitle";
 import ThreadBody from "./ThreadBody";
+import ThreadResponsesBuilder from "./ThreadResponsesBuilder";
+import ThreadPointsBar from "../../points/ThreadPointsBar";
 
 const Thread= () => {
     const [thread,setThread] = useState<ThreadModal | undefined>();
@@ -41,6 +43,16 @@ const Thread= () => {
                      <ThreadCategory categoryName={thread?.category?.name} />
                      <ThreadTitle title={thread?.title} />
                      <ThreadBody body={thread?.body} />
+                </div>
+                <div className="thread-content-points-container">
+                    <ThreadPointsBar
+                        points={thread?.points || 0}
+                        responseCount ={thread && thread.threadItems && thread.threadItems.length}
+                    />
+                </div>
+                <div className="thread-content-response-container" >
+                    <hr className="thread-section-divider" />
+                    <ThreadResponsesBuilder threadItems={thread?.threadItems} />
                 </div>
             </div>
         </div>
