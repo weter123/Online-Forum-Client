@@ -7,6 +7,7 @@ import Registration from "../../auth/Registeration"
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
 import "./SideBarMenu.css";
+import { Link } from 'react-router-dom';
 const SideBarMenus = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin,setShowLogin] = useState(false);
@@ -33,7 +34,7 @@ const SideBarMenus = () => {
                 <li>
                     <FontAwesomeIcon icon= {faUser} />
                     <span className='menu-name'>
-                        {user?.userName}
+                        <Link to={`/userprofile/${user?.id}`}>{user?.userName}</Link>
                     </span>
                 </li>
                 <li>
