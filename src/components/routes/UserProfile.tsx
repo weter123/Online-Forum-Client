@@ -21,7 +21,7 @@ const UserProfile = () => {
     });
 
     const user = useAppSelector(state =>state.user);
-    const [threads, setThread] =useState<JSX.Element | undefined>();
+    const [threads, setThreads] =useState<JSX.Element | undefined>();
     const [threadItems, setThreadItems] = useState<JSX.Element | undefined>();
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const UserProfile = () => {
                     </li>
                 );
             });
-            setThreadItems(<ul>{threadList}</ul>)
+            setThreads(<ul>{threadList}</ul>)
 
             const threadItemList = threadItemsInThreadList.map((ti: ThreadItem) => (
                 <li key={`user-th-${ti.threadId}`}>
