@@ -3,10 +3,10 @@ import ReactModal from "react-modal";
 import {ModalProps} from "../types/ModalProps";
 import userReducer from "./common/UserReducer";
 import { allowSubmit } from "./common/Helpers";
-import { useDispatch } from "react-redux";
+
 import  {UserProfileSetType}  from "../../store/user/Reducers"
 import { useAppDispatch } from "../../hooks/useHooks";
-import { applyPatches } from "immer";
+
 const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
 
     const [{userName, password, resultMsg, isSubmitDisabled}, dispatch] =useReducer(userReducer, {

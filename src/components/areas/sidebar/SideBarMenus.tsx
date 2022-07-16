@@ -1,8 +1,8 @@
 import { faUser, faRegistered, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/useHooks'
-import { userProfile } from '../../../store/user/Reducers';
+import {useAppSelector } from '../../../hooks/useHooks'
+
 import Registration from "../../auth/Registeration"
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
@@ -13,12 +13,9 @@ const SideBarMenus = () => {
     const [showLogout, setShowLogout] = useState(false);
     const user = useAppSelector(state =>state.user);
     
-    const dispatch =useAppDispatch();
+   
 
-    useEffect(()=>{
-        dispatch(userProfile({id: 1, username: "testUser",},
-        ));
-    },[dispatch]);
+    
 
     const onClickToggleRegister = () => {
         setShowRegister(!showRegister);
@@ -36,7 +33,7 @@ const SideBarMenus = () => {
                 <li>
                     <FontAwesomeIcon icon= {faUser} />
                     <span className='menu-name'>
-                        {user?.username}
+                        {user?.userName}
                     </span>
                 </li>
                 <li>

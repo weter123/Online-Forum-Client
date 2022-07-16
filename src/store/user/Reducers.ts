@@ -4,13 +4,13 @@ export const UserProfileSetType = "USER_PROFILE_SET";
 
 export interface UserProfileState{
     id: string;
-    username: string;
+    userName: string;
 }
 
 
 const initialState: UserProfileState = {
     id: '',
-    username: ''
+    userName: ''
 };
 
 export const userSlice = createSlice({
@@ -19,7 +19,7 @@ export const userSlice = createSlice({
     reducers:{
         userProfile: (state, action) => {
             state.id = action.payload.id
-            state.username =action.payload.username
+            state.userName =action.payload.username
         }
     }
 })
