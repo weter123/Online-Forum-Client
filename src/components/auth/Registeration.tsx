@@ -1,4 +1,4 @@
-import React, { FC, useReducer, useState} from "react";
+import React, { FC, useReducer} from "react";
 import ReactModal from "react-modal";
 import {ModalProps} from '../types/ModalProps';
 import userReducer from "./common/UserReducer";
@@ -6,7 +6,6 @@ import { allowSubmit } from "./common/Helpers";
 import PasswordComparison from "./common/PasswordComparison";
 
     const Registration : FC<ModalProps> = ({ isOpen, onClickToggle}) =>{
-        const [isRegisterDisabled, setRegisterDisabled,] = useState(true);
         const[{ userName,password,email, passwordConfirm,resultMsg, isSubmitDisabled}, dispatch] = useReducer(userReducer,{
             userName: "devac",
             password: "",
@@ -42,9 +41,10 @@ import PasswordComparison from "./common/PasswordComparison";
             onClickToggle(e);
         };
 
-        const onClickCancel = ( e: React.MouseEvent<HTMLButtonElement,MouseEvent>) => {
+        const onClickCancel = ( e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             onClickToggle(e);
         };
+
 
         return(
             <ReactModal
@@ -76,7 +76,7 @@ import PasswordComparison from "./common/PasswordComparison";
                                 <button
                                 style={{marginLeft: ".5em"}}
                                 className="action-btn"
-                                disabled ={isRegisterDisabled}
+                                disabled ={isSubmitDisabled}
                                 onClick ={onClickRegister}>Register</button>
                                 <button
                                 style={{marginLeft: ".5em"}}
@@ -93,3 +93,5 @@ import PasswordComparison from "./common/PasswordComparison";
     }
 
     export default Registration;
+
+   
