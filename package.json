@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/css": "^11.10.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -29,9 +33,9 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.4.0",
     "redux": "^4.2.0",
-    "slate": "^0.81.1",
-    "slate-history": "^0.66.0",
-    "slate-react": "^0.81.0",
+    "slate": "^0.58.4",
+    "slate-history": "^0.58.4",
+    "slate-react": "^0.58.4",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
